@@ -5,7 +5,7 @@ def addFilm():
 
     film = []
 
-    title = input("Enter film name:")
+    title = input("Enter film name: ")
     yearReleased = int(input("Enter the year, the film was released: "))
     rating = input("Enter the suitability rating of this film: ")
     duration = int(input("Enter how long this film is in minutes: "))
