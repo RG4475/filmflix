@@ -2,7 +2,7 @@ import readFilms
 import addFilm
 import deleteFilm
 from updateFilm import *
-import reports
+from reports import *
 
 def menuSelect():
     option = 0
@@ -32,8 +32,7 @@ while program:
     elif selected == "4":
         deleteFilm.deleteFilm()
     elif selected == "5":
-        readprogram = True
-        reports.readReports()
+        runReportsFile()
     else:
         program = False
 
