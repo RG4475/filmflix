@@ -23,7 +23,7 @@ def addFilm():
 
         read()
     else:
-        print("Please enter G, PG or R for film suitability rating")
+        print("Please enter G, PG or R for film suitability rating. Film was not added")
 
 if __name__ == "__main__":
     addFilm()

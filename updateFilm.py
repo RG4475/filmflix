@@ -2,6 +2,7 @@ from connection import *
 from readFilms import *
 
 def updateFilm():
+    read()
 
     filmID = int(input("Enter the film ID of the film you wish to update. "))
     cursor.execute(f"SELECT * FROM tblFilms WHERE filmID = {filmID}")
