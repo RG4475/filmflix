@@ -35,7 +35,7 @@ def runReportsFile():
     
         elif selected == "2":
             genre = input("Enter the genre of films you want to read ").title()
-            cursor.execute(f"SELECT title, yearReleased, rating, duration FROM tblFilms WHERE genre = \'{genre}\'")
+            cursor.execute(f"SELECT filmID, title, yearReleased, rating, duration FROM tblFilms WHERE genre = \'{genre}\'")
 
             filmsReturned = cursor.fetchall()
             noGenre = "that are of that particular genre"
@@ -44,7 +44,7 @@ def runReportsFile():
 
         elif selected == "3":
             year = int(input("Enter the year to see all films that were released in that year "))
-            cursor.execute(f"SELECT title, rating, duration, genre FROM tblFilms WHERE yearReleased = {year}")
+            cursor.execute(f"SELECT filmID, title, rating, duration, genre FROM tblFilms WHERE yearReleased = {year}")
 
             filmsReturned = cursor.fetchall()
             noYear = "that were released in that year"
@@ -53,7 +53,7 @@ def runReportsFile():
 
         elif selected == "4":
             rating = input("Enter the suitability rating to see all films that have that suitability rating ").upper()
-            cursor.execute(f"SELECT title, yearReleased, duration, genre FROM tblFilms WHERE rating = \'{rating}\'")
+            cursor.execute(f"SELECT filmID, title, yearReleased, duration, genre FROM tblFilms WHERE rating = \'{rating}\'")
 
             filmsReturned = cursor.fetchall()
             noRating = "that have that suitability rating"

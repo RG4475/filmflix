@@ -16,12 +16,20 @@ def updateFilm():
         if chosenField in ['Title', 'Rating', 'Genre']:
 
             fieldValue = input(f"Enter the new value for {chosenField} to be updated to for Film ID {filmID}: ")
-            cursor.execute(f"UPDATE tblFilms SET {chosenField} = \'{fieldValue}\' WHERE filmID = {filmID}")
-            completeUpdate(filmID)
+
+            if chosenField == 'Rating':
+                if fieldValue in ["G", "PG", "R"]:
+                    cursor.execute(f"UPDATE tblFilms SET {chosenField} = \'{fieldValue}\' WHERE filmID = {filmID}")
+                    completeUpdate(filmID)
+                else:
+                    print("Please enter G, PG or R for film suitability rating. no films have been updated")
+            else:
+                cursor.execute(f"UPDATE tblFilms SET {chosenField} = \'{fieldValue}\' WHERE filmID = {filmID}")
+                completeUpdate(filmID)
 
         elif chosenField in ['Yearreleased', 'Duration']:
 
-            fieldValue = int(input(f"Enter the new value for {chosenField} to be updated to for Film ID {filmID}: if updating duration, please enter the duration in minutes "))
+            fieldValue = int(input(f"Enter the new value for {chosenField} to be updated to for Film ID {filmID}: "))
             cursor.execute(f"UPDATE tblFilms SET {chosenField} = {fieldValue} WHERE filmID = {filmID}")
             completeUpdate(filmID)
 
